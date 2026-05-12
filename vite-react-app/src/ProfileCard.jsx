@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // Using props
 // function ProfileCard(props) {
@@ -12,16 +12,27 @@ import PropTypes from 'prop-types';
 // }
 
 // Using destructing
-function ProfileCard({name, age, isMember, hobbies}){
+function ProfileCard({ name, age, isMember, hobbies, onHandleClick }) {
   return (
-    <div>
-      <h1>Hello, {name}</h1>
-      <h3>{name} age is {age}</h3>
-      <h4>Status: {isMember ? "Active Member" : "Guest"}</h4>
-      <h4>Hobbies:</h4>
+    <div className="profile-card">
+      <h3>
+        Hello, <span id="name">{name}</span>
+      </h3>
+      <h3>
+        {name} age is {age}
+      </h3>
+      <h3>
+        Status:{" "}
+        <span id="statusId">{isMember ? "Active Member" : "Guest"}</span>
+      </h3>
+      <h3>Hobbies:</h3>
       <ul>
         {hobbies.map((hobby, index) => {
-          return <li key={index}>{hobby}</li>
+          return (
+            <li key={index} onClick={() => onHandleClick(hobby)}>
+              {hobby}
+            </li>
+          );
         })}
       </ul>
     </div>
@@ -30,9 +41,9 @@ function ProfileCard({name, age, isMember, hobbies}){
   // Validations
   ProfileCard.propTypes = {
     name: PropTypes.string,
-    age:PropTypes.number,
-    isMember:PropTypes.bool,
-    hobbies:PropTypes.arrayOf(PropTypes.string)
+    age: PropTypes.number,
+    isMember: PropTypes.bool,
+    hobbies: PropTypes.arrayOf(PropTypes.string),
   };
 }
 

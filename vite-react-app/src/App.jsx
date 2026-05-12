@@ -1,17 +1,124 @@
+import { useState } from 'react';
 import './App.css'
-import ProfileCard from './ProfileCard';
+import ArrayCounter from './ArrayCounter';
+// import ProfileCard from './ProfileCard'
 
 function App(){
-  // Using props
-
-  const hobby1 = ["Reading", "Cooking", "Gardening"];
-  return(
-    <div>
-      <ProfileCard name="Alice" age="25" isMember={true} hobbies={hobby1}/>
-      <ProfileCard name="John" age="28" isMember={false} hobbies={["Swimming","Drawing","Jogging"]}/>
-    </div>
-  )
+  return (
+    <ArrayCounter />
+  );
 }
+
+
+// function App(){
+//   //useState
+//   const [count, setCount] = useState(0);
+//   const [step, setStep] = useState(1);
+
+// const incrementCount = () => {
+//   setCount(count + step);
+// };
+
+// const decrementCount = () => {
+//   setCount(count - step);
+// };
+
+// const incrementTwice = () => {
+//   setCount(prevCount => prevCount + 1);
+//   setCount(prevCount => prevCount + 1);
+// }
+
+//   return(
+//     <div className='app-container'>
+//       <h2>Counter Value: {count}</h2>
+      
+//     <span>
+//       <input type='number'
+//               value={step}
+//               onChange={(e) => setStep(parseInt(e.target.value))}/> {/* value is passed as string so it should be prased to int */}
+//       <button onClick={incrementCount}>Increment Count</button>
+//       <button onClick={decrementCount}>Decrement Count</button>
+//       <button onClick={incrementTwice}>+2</button>
+//     </span>
+      
+//       {/* <button onClick={() => setCount(count + 1)}>Increment Count</button>
+//       <button onClick={() => setCount(count - 1)}>Decrement Count</button> */}
+//     </div>
+//   );
+
+// }
+// function App(){
+
+//   const handleHobbyClick = (hobby) => {
+//     alert(`You clicked on ${hobby}`);
+//   };
+
+//   //objects
+//   const aliceProfile = {
+//     name:"Alice",
+//     age:25,
+//     isMember:true,
+//     hobbies:["Reading","Cooking"],
+//     onHandleClick:handleHobbyClick
+//   };
+
+//   const johnProfile = {
+//     name:"John",
+//     age:25,
+//     isMember:false,
+//     hobbies:["Swimming","Drawing"],
+//     onHandleClick:handleHobbyClick
+//   };
+
+//   const boBProfile = {
+//     name:"Bob",
+//     age:25,
+//     isMember:true,
+//     hobbies:["Gardening","Jogging"],
+//     onHandleClick:handleHobbyClick
+//   };
+
+//   return (
+//     <div className='app-container'>
+//       {/* spread operator */}
+//       <ProfileCard {...aliceProfile}/>
+//       <ProfileCard {...johnProfile}/>
+//       <ProfileCard {...boBProfile}/>
+//     </div>
+//   );
+// }
+// function App(){
+//   // Using props
+
+//   const hobby1 = ["Reading", "Cooking"];
+//   const handleHobbyClick = (hobby) => {
+//     alert(`You clicked on: ${hobby}`);
+//   };
+//   return(
+//     <div className='app-container'>
+//       <ProfileCard 
+//                   name="Alice" 
+//                   age="25" 
+//                   isMember={true} 
+//                   hobbies={hobby1} 
+//                   onHandleClick={handleHobbyClick}/>
+
+//       <ProfileCard 
+//                   name="John" 
+//                   age="28" 
+//                   isMember={false} 
+//                   hobbies={["Swimming","Drawing"]} 
+//                   onHandleClick={handleHobbyClick}/>
+
+//       <ProfileCard 
+//                   name="Bob" 
+//                   age="35" 
+//                   isMember={true} 
+//                   hobbies={["Gardening","Jogging"]} 
+//                   onHandleClick={handleHobbyClick}/>
+//     </div>
+//   )
+// }
 
 // function welcomeMessage(name){
 //   return <h1>Hello, {name}</h1>;
