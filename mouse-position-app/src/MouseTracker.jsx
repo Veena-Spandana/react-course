@@ -9,6 +9,11 @@ function MouseTracker(){
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    // console.log("Mouse event listener added");
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      // console.log("Mouse event listener removed");
+    }
   }, []);
   return (
     <div>
